@@ -12,7 +12,7 @@ const courseShema = mongoose.Schema({
         require : true
     },
     tuition :{
-        type : Number,
+        type : String,
         require : true
     },
     studytime : {
@@ -20,11 +20,11 @@ const courseShema = mongoose.Schema({
         require : true
     },
     numberofstudents : {
-        type :  Number,
+        type :  String,
         default : 15
     },
     numberofsubjects : {
-        type : Number,
+        type : String,
         default : "user"
     },
     coursetype : {
