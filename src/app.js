@@ -21,6 +21,15 @@ app.use(bodyParser.json())
 
 app.use("/api/user",userRouter)
 app.use("/api/course",CourseRouter)
+
+app.use((req,res,next) => {
+    try {
+        throw new Error("Not found!")
+    } catch (error) {
+        next(error)
+    }
+})
+
 app.use('/image', express.static(path.join(__dirname, 'image')))
 
 app.post("/single",upload.single("image"),(req,res) =>{
